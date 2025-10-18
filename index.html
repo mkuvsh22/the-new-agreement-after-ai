@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новый договор | The New Agreement</title>
+    <!-- Meta for social preview and indexing -->
+<meta property="og:title" content="The New Agreement — Maria Kuvshinova" />
+<meta property="og:description" content="A journey through digital images, vertical screens, and neural generations — where Deleuze's film theory stops working, yet still explains everything." />
+<meta property="og:image" content="https://YOURDOMAIN.github.io/path/to/cover.jpg" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://YOURDOMAIN.github.io/" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="author" content="Maria Kuvshinova" />
+<meta name="description" content="The New Agreement by Maria Kuvshinova — a reflection on cinema after AI." />
+
+    <link rel="icon" type="image/png" href="45.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Poppins, sans-serif; /* ШРИФТ - меняйте здесь */
+            background-color: #000505;
+            color: #ffffff;
+            overflow: hidden;
+        }
+
+        .container {
+            display: flex;
+            height: 100vh;
+        }
+
+        /* ЛЕВАЯ ЧАСТЬ - СЛАЙДШОУ */
+        .slideshow-section {
+            width: 50%; /* ШИРИНА ЛЕВОЙ ЧАСТИ - меняйте здесь */
+            position: relative;
+            overflow: hidden;
+            background-color: #000000; /* ЦВЕТ ФОНА СЛАЙДШОУ - меняйте здесь */
+        }
+
+.slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: contrast(1.05) brightness(0.98);
+}
+
+.slideshow-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.03) 2px, rgba(0,0,0,.03) 4px);
+    opacity: 0.9;
+    pointer-events: none;
+    z-index: 9;
+}
+
+        .slideshow-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .slide {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.8s ease-in-out; /* СКОРОСТЬ ПЕРЕХОДА - меняйте здесь */
+        }
+
+        .slide.active {
+            opacity: 1;
+        }
+
+        .slide img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ПРАВАЯ ЧАСТЬ - ТЕКСТ */
+        .content-section {
+            width: 50%; /* ШИРИНА ПРАВОЙ ЧАСТИ - меняйте здесь */
+            padding: 60px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #e6e9ed; /* ЦВЕТ ФОНА ТЕКСТОВОЙ ЧАСТИ - меняйте здесь */
+        }
+
+        .content-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            flex-grow: 1;
+            justify-content: center;
+        }
+
+        /* Языковые ссылки */
+        .language-links {
+            margin-bottom: 50px;
+            font-size: 18px; /* РАЗМЕР ШРИФТА ССЫЛОК - меняйте здесь */
+        }
+
+        .language-links a {
+            color: #587291; /* ЦВЕТ ССЫЛОК - меняйте здесь */
+            text-decoration: none;
+            padding: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .language-links a:hover {
+            color: #cccccc; /* ЦВЕТ ССЫЛОК ПРИ НАВЕДЕНИИ - меняйте здесь */
+        }
+
+        .language-links .separator {
+            color: #666666; /* ЦВЕТ РАЗДЕЛИТЕЛЯ - меняйте здесь */
+        }
+
+        /* Текстовый контент */
+        .text-content {
+            max-width: 600px;
+            text-align: left;
+        }
+
+        .text-content p {
+            font-size: 14px; /* РАЗМЕР ШРИФТА ТЕКСТА - меняйте здесь */
+            line-height: 1.8; /* МЕЖСТРОЧНЫЙ ИНТЕРВАЛ - меняйте здесь */
+            margin-bottom: 25px;
+            color: #31081f; /* ЦВЕТ ОСНОВНОГО ТЕКСТА - меняйте здесь */
+        }
+
+        /* Копирайт */
+        .copyright {
+            text-align: center;
+            font-size: 12px; /* РАЗМЕР ШРИФТА КОПИРАЙТА - меняйте здесь */
+            color: #999999; /* ЦВЕТ КОПИРАЙТА - меняйте здесь */
+            padding: 10px 0;
+        }
+
+        /* Социальные ссылки */
+        .social-links {
+            text-align: center;
+            padding: 0 0 15px 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px; /* РАЗМЕР ИКОНКИ - меняйте здесь */
+            height: 40px; /* РАЗМЕР ИКОНКИ - меняйте здесь */
+            background-color: #999999; /* ЦВЕТ ИКОНОК - меняйте здесь */
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 50%;
+            font-size: 20px;
+            transition: background-color 0.3s;
+        }
+
+        .social-links a:hover {
+            background-color: #666666; /* ЦВЕТ ИКОНОК ПРИ НАВЕДЕНИИ - меняйте здесь */
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .slideshow-section {
+                width: 100%;
+                height: 40vh;
+            }
+
+            .content-section {
+                width: 100%;
+                height: 60vh;
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- ЛЕВАЯ ЧАСТЬ - СЛАЙДШОУ -->
+        <div class="slideshow-section">
+            <div class="slideshow-container">
+                <div class="slide active">
+                    <img src="11.png" alt="Slide 1">
+                </div>
+                <div class="slide">
+                    <img src="7.png" alt="Slide 4">
+                </div>
+                <div class="slide">
+                    <img src="4.png" alt="Slide 5">
+                </div>
+             
+                <div class="slide">
+                    <img src="6.png" alt="Slide 7">
+                </div>
+                <div class="slide">
+                    <img src="8.png" alt="Slide 8">
+                </div>
+                <div class="slide">
+                    <img src="2.png" alt="Slide 9">
+                </div>
+                <div class="slide">
+                    <img src="1.png" alt="Slide 10">
+                </div>
+            </div>
+        </div>
+
+        <!-- ПРАВАЯ ЧАСТЬ - ТЕКСТ -->
+        <div class="content-section">
+            <div class="content-wrapper">
+                <!-- Языковые ссылки -->
+                <div class="language-links">
+                    <a href="rus.html">на русском</a>
+                    <span class="separator">|</span>
+                    <a href="book.html">en english</a>
+                </div>
+
+                <!-- Текстовый контент -->
+                <div class="text-content">
+                    <p>
+                        <b>«Новый договор. Кино и зритель после ИИ»</b> Марии Кувшиновой — это увлекательное путешествие кинокритика в собственные оцифрованные воспоминания, мир больших данных, вертикальных экранов и генераций нейросетей, где кинотеория Делёза перестаёт работать, но не теряет своей объяснительной силы.
+                    </p>
+                    <p>
+                        <b>The New Agreement. Cinema and the Viewer After AI</b> by Maria Kuvshinova is a captivating journey of a film critic into her own digitized memories, the world of big data, vertical screens, and neural network generations, where Deleuze’s film theory ceases to function but does not lose its explanatory power.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Копирайт -->
+            <div class="copyright">
+                © Maria Kuvshinova (2025)
+            </div>
+
+            <!-- Социальные ссылки -->
+            <div class="social-links">
+                <a href="https://x.com/mkuvsh" target="_blank" title="Twitter">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                        <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                    </svg>
+                </a>
+                <a href="https://letterboxd.com/mkuvsh/" target="_blank" title="Letterboxd">
+                    <svg width="18" height="18" viewBox="0 0 500 500" fill="currentColor">
+                        <circle cx="250" cy="250" r="175" fill="none" stroke="currentColor" stroke-width="60"/>
+                        <path d="M250,425 L250,75 M175,250 L325,250"/>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+    // ====== НАСТРОЙКИ СЛАЙДШОУ ======
+    const SLIDE_SPEED = 2000; // СКОРОСТЬ СМЕНЫ СЛАЙДОВ В МИЛЛИСЕКУНДАХ (1000 = 1 секунда) - меняйте здесь
+    // ================================
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    let slideshowStarted = false;
+
+    // Предзагрузка всех изображений
+    function preloadImages() {
+        const images = document.querySelectorAll('.slide img');
+        let loadedCount = 0;
+        
+        images.forEach(img => {
+            if (img.complete) {
+                loadedCount++;
+            } else {
+                img.addEventListener('load', () => {
+                    loadedCount++;
+                    if (loadedCount === images.length && !slideshowStarted) {
+                        startSlideshow();
+                    }
+                });
+            }
+        });
+        
+        if (loadedCount === images.length && !slideshowStarted) {
+            startSlideshow();
+        }
+    }
+
+    function showSlide(index) {
+        slides.forEach(slide => slide.classList.remove('active'));
+        slides[index].classList.add('active');
+    }
+
+    function nextSlide() {
+        currentSlide = (currentSlide + 1) % totalSlides;
+        showSlide(currentSlide);
+    }
+
+    function startSlideshow() {
+        slideshowStarted = true;
+        setInterval(nextSlide, SLIDE_SPEED);
+    }
+
+    // Запуск предзагрузки при загрузке страницы
+    window.addEventListener('load', preloadImages);
+</script>
+ 
+</body>
+</html>

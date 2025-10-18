@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Новый договор | The New Agreement</title>
+    <!-- SEO & Open Graph -->
+<meta name="description" content="A reflection on cinema after AI — where vertical screens, neural images, and Deleuzian theory collide.">
+<meta property="og:title" content="The New Agreement — Cinema and the Viewer After AI">
+<meta property="og:description" content="A reflection on cinema after AI — where vertical screens, neural images, and Deleuzian theory collide.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://твоя-ссылка.github.io/book.html">
+<meta property="og:image" content="https://твоя-ссылка.github.io/45.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="The New Agreement — Cinema and the Viewer After AI">
+<meta name="twitter:description" content="A reflection on cinema after AI — where vertical screens, neural images, and Deleuzian theory collide.">
+<meta name="twitter:image" content="https://твоя-ссылка.github.io/45.png">
+
+    <link rel="icon" type="image/png" href="45.png">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+            color: #000000;
+            line-height: 1.6;
+        }
+
+        /* Стили для библиографии */
+        #bibliography .chapter-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        #bibliography .chapter-content ul {
+            padding-left: 1.5em;
+            list-style-position: inside;
+        }
+
+        #bibliography .chapter-content li {
+            margin-bottom: 0.5em;
+        }
+
+        #bibliography .chapter-content h3 {
+            margin-top: 1em;
+            margin-bottom: 0.5em;
+        }
+
+        /* ПЕРВЫЙ ЭКРАН - ТЕКСТ И ОБЛОЖКА */
+        .hero-section {
+            display: flex;
+            height: 100vh;
+            position: relative;
+        }
+
+        /* ЛЕВАЯ ЧАСТЬ - ТЕКСТ */
+        .table-of-contents {
+            width: 50%;
+            padding: 40px 40px;
+            background-color: #f5f5f5;
+            overflow-y: auto;
+        }
+
+        .toc-title {
+            font-size: 21px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: #000000;
+        }
+
+        .toc-subtitle {
+            font-size: 21px;
+            margin-bottom: 20px;
+            color: #666666;
+        }
+
+        .toc-text p {
+    margin-bottom: 1.8em; /* увеличивает отступ между абзацами */
+}
+
+.toc-text {
+    font-size: 14px; /* можно поставить 18px, если хочется чуть крупнее */
+    line-height: 1.8;
+    color: #333333;
+}
+
+.toc-text a {
+    color: #b30000;        /* тот же красный, что и в .availability */
+    text-decoration: none; /* всегда подчеркнутые */
+    font-weight: 500;       /* чуть выделяет визуально */
+}
+
+.toc-text a:hover {
+    text-decoration: none;  /* убирается подчёркивание при наведении */
+}
+
+.toc-text .availability {
+    margin-top: 3em; /* делает "два отступа" сверху */
+    font-size: 15px;
+    color: #444;
+}
+
+.toc-text .availability a {
+    color: #587291;
+    text-decoration: none;
+}
+
+.toc-text .availability a:hover {
+    color: #31081f;
+}
+.availability {
+    font-size: 16px;
+    color: #b30000;
+    margin-top: 20px;
+    margin-bottom: 40px; /* <-- увеличивает отступ перед основным текстом */
+}
+.availability a {
+    color: #b30000;
+    text-decoration: none; /* убирает подчеркивание */
+    font-weight: 500; /* чуть выделяет */
+}
+
+.availability a:hover {
+    text-decoration: underline; /* можно включить подчеркивание при наведении */
+}
+
+
+
+
+        /* ПРАВАЯ ЧАСТЬ - ОБЛОЖКА */
+        .cover-section {
+            width: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #ffffff;
+            padding: 40px;
+        }
+
+        .cover-image {
+            width: 120%;
+            height: 120%;
+            object-fit: contain;
+            box-shadow: none;
+        }
+
+        /* КОНТЕНТ ГЛАВ */
+        .chapters-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 80px 40px;
+        }
+
+        .chapter {
+            margin-bottom: 80px;
+            padding-top: 40px;
+        }
+
+        .chapter-title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #000000;
+        }
+
+        .chapter-content {
+            font-size: 16px;
+            line-height: 1.8;
+            color: #333333;
+        }
+
+        .chapter-content p {
+            margin-bottom: 20px;
+        }
+
+        /* ССЫЛКА НАЗАД */
+        .back-link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            font-size: 16px;
+            color: #587291;
+            text-decoration: none;
+            transition: color 0.3s;
+            z-index: 100;
+        }
+
+        .back-link:hover {
+            color: #31081f;
+        }
+
+        .note {
+            margin: 30px 0 30px auto;
+            padding: 15px 20px;
+            max-width: 70%;
+            border-left: 3px solid #999999;
+            background-color: #f9f9f9;
+            font-size: 14px;
+            font-style: italic;
+            color: #666666;
+            text-align: left;
+        }
+
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero-section {
+                flex-direction: column;
+            }
+
+            .table-of-contents,
+            .cover-section {
+                width: 100%;
+            }
+
+            .table-of-contents {
+                padding: 40px 20px;
+            }
+
+            .cover-section {
+                height: 50vh;
+            }
+
+            .chapters-content {
+                padding: 40px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Ссылка назад на главную -->
+    <a href="index.html" class="back-link">home</a>
+
+    <!-- ПЕРВЫЙ ЭКРАН -->
+<div class="hero-section">
+    <!-- ЛЕВАЯ ЧАСТЬ -->
+    <div class="table-of-contents">
+        <h1 class="toc-title">Новый договор. Кино и зритель после ИИ</h1>
+
+        <div class="toc-text">
+            <p><em><b>Мария Кувшинова</b> — кинокритик, соосновательница сайта kkbbd.com, автор книг <a href=https://www.litres.ru/book/mariya-kuvshinova/aleksey-balabanov-biografiya-71645431/ target="_blank">«Балабанов»</a> (2013, 2014, 2025), «Кино как визуальный код» (2014), «Александр Миндадзе: от советского к постпостсоветскому» (2017), «Новый договор: кино и зритель после ИИ» (2025).</em></p>
+
+            <p>Мы смотрим ИИ-слоп, и наши отношения с изображением меняются, как они уже изменились под влиянием маленьких цифровых камер. Я подумала и написала об этом книгу «Новый договор. Кино и зритель после ИИ» — путешествие кинокритика в нейросетевую реальность.</p>
+
+            <p>Франшиза о чужих, ранний сайт Gorillaz, вертикальные сериалы, обученный на моих текстах робот-кинокритик, призраки Google-карт Джона Рафмана, эффект зловещей долины и разоблачение Netflix — темы, которые я изучала в магистратуре ИТМО, вступили в реакцию с моими старыми текстами и увлечениями.</p>
+
+            <p>По совету Делёза я использовала его кинотеорию, как ящик с инструментами. Например, у него есть категория закадрового пространства: существуя за рамками экрана, оно влияет на видимое — и это похоже на латентное пространство моделей, из которого возникают потенциальные изображения. Ещё интереснее ситуация с монтажом, который на протяжении ста лет был краеугольным камнем кинематографа, — модели генерации видео заменяют его парадоксальным морфингом, не учитывающим логику причинности физического мира.</p>
+        </div>
+
+        <p class="availability">
+            <a href="https://www.litres.ru" target="_blank">Купить на Litres</a> |
+            Купить бумажную книгу (скоро)
+        </p>
+    </div>
+
+    <!-- ПРАВАЯ ЧАСТЬ - ОБЛОЖКА -->
+    <div class="cover-section">
+        <img src="cover11.png" alt="The New Agreement - Book Cover" class="cover-image">
+    </div>
+</div>
